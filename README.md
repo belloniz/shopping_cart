@@ -29,15 +29,21 @@ You should see something like this:
 000000000000   mongo:4.0.21   "docker-entrypoint.s…"   .....   .....   0.0.0.0:27017->27017/tcp   shopping_cart-mongo-1</pre>
 
 5. Now you can run the following command to start the application:
-<pre>node src/index.js </pre>
+<pre>npm start</pre>
 
 Your terminal will show the following message:
-<pre>listening on port 3000</pre>
+<pre>
+> shopping_cart@1.0.0 start
+> node src/index.js
+
+2022-08-22 00:45:14:4514 info: application started, listening on port 3000
+2022-08-22 00:45:14:4514 info: products already added to the database, continuing...
+</pre>
 
 ## How to use the API
 Since the application is running locally, we will use http://localhost:3000 as the base url. Using an API client like Postman, Insomnia, etc, you can use the following route as an example:
 
-### POST cart/
+### POST /cart/
 This is an example of the parameters to be sent in the request's body:
 ```
 {

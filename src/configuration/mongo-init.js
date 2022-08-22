@@ -1,3 +1,4 @@
+import logger from './logger.js'
 import Product from '../models/product.js'
 
 const products = [
@@ -31,19 +32,20 @@ export async function createProducts() {
     try {
         const result = await Product.find()
         if (result.length > 0) {
+            logger.info('products already added to the database, continuing...')
             return
         }
-        console.log(result)
     } catch (err) {
-        console.log(err)
+        logger.error(err)
     }
+
+    logger.info('products not found, adding products to the database...')
 
     for (const product of products) {
         try {
             const result = await Product.create(product)
-            console.log(result)
         } catch (err) {
-            console.log(err)
+            logger.error(err)
         }
     }
     return
