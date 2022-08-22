@@ -37,7 +37,7 @@ Your terminal will show the following message:
 > node src/index.js
 
 2022-08-22 00:45:14:4514 info: application started, listening on port 3000
-2022-08-22 00:45:14:4514 info: products already added to the database, continuing...
+2022-08-22 00:45:14:4514 info: products not found, adding products to the database...
 </pre>
 
 ## How to use the API
